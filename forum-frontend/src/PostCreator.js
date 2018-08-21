@@ -12,7 +12,7 @@ class PostCreator extends Component {
   }
 
 
-  createPost(event) {    
+  createPost(event) {
     console.log('Titulo: ' + this.state.titulo);
     console.log('Mensagem: ' + this.state.mensagem);
 
@@ -36,18 +36,35 @@ class PostCreator extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.createPost} method="POST">
-          Título:
-              <input type="text" name="titulo" value={this.state.titulo}
-            onChange={this.changeData} />
-          <br />
-          Mensagem:
-              <input type="text" name="mensagem" value={this.state.mensagem}
-            onChange={this.changeData} />
-          <br />
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="row justify-content-center">
+        <div className="card w-50 m-5">
+         <div class="card-header">
+         <div className="form-row justify-content-center">
+         Postagens
+         </div>
+         </div>
+          <form onSubmit={this.createPost} method="POST">
+          <div className="form-group">
+          <div className="form-row justify-content-center mb-2">
+          Assunto :
+                <input type="text" name="titulo" value={this.state.titulo}
+              onChange={this.changeData} />
+          </div>
+          </div>
+          <div className="form-group">
+          <div className="form-row justify-content-center mb-2">
+            Pergunta :
+                <input type="text" name="mensagem" value={this.state.mensagem}
+              onChange={this.changeData} />
+          </div>
+          </div>
+          <div className="form-group">
+          <div className="form-row justify-content-center">
+            <input type="submit" value="Submit" className="btn-danger rounded"/>
+          </div>
+          </div>
+          </form>
+        </div>
       </div>
     );
   }

@@ -19,14 +19,13 @@ class Posts extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-light">Fórum</h1>
+        <h1 className="text-light text-center">Fórum</h1>
         <div className="row justify-content-center">
           <div className="col-lg-8">
             {this.state.posts.map(post =>
-              <div key={post.id} className="card mb-3">
-
+              <div key={post.id} className="card text-white bg-danger mb-3">
                 <div className="card-header">
-                  <h6 className="card-title">{post.titulo}</h6>
+                  <h6 className="card-title">#{post.id} {post.titulo}</h6>
                 </div>
                 <div className="card-body">
                   <p className="card-text">{post.mensagem}</p>
